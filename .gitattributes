@@ -1,0 +1,9 @@
+# Нормалізуємо завершення рядків у текстових файлах.
+* text=auto eol=lf
+# Скрипт Windows Maven Wrapper має працювати з CRLF.
+*.cmd text eol=crlf
+# Бінарні файли не порівнюємо як текст.
+*.jar binary
+*.png binary
+*.jpg binary
+*.docx binary

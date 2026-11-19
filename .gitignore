@@ -1,0 +1,23 @@
+# Віртуальні середовища (відтворюються за pyproject.toml).
+.venv/
+.venv-*/
+
+# Результати пакетування та кеші.
+build/
+dist/
+*.egg-info/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+
+# Звіти, які програма створює під час локального запуску (еталонний приклад зберігається окремо).
+reports/*
+!reports/.gitkeep
+!reports/example-summary.txt
+
+# Локальні налаштування середовищ розробки та файли ОС.
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
