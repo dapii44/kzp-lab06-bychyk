@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "kzp-lab06-bychyk"
-version = "0.1.0"
-description = "Звіт про спортивні тренування з CSV (КЗП, лабораторна робота № 6)"
+version = "0.2.0"
+description = "Звіт про спортивні тренування з CSV (КЗП, лабораторні роботи № 6–7)"
 readme = "README.md"
 requires-python = ">=3.11"
 authors = [{ name = "Вадім Бичик, КІ-304" }]
@@ -19,6 +19,7 @@ dev = [
 
 [project.scripts]
 kzp-lab06 = "kzp_lab06.cli:main"
+kzp-lab07 = "kzp_lab07.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
