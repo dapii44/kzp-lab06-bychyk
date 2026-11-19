@@ -57,6 +57,11 @@ jobs:
           code=$?
           set -e
           test "$code" -eq 2
+          # Лабораторна № 7: об'єктна модель дає той самий базовий звіт + блок навантаження.
+          "$PY" -m kzp_lab07.cli data/input.csv reports/wheel-oop.txt --load
+          head -n 11 reports/wheel-oop.txt | diff -u reports/example-summary.txt -
+          "$PY" -m kzp_lab07.cli data/workouts-oop.csv reports/wheel-oop2.txt --load
+          diff -u reports/example-oop-summary.txt reports/wheel-oop2.txt
 
       - name: Upload wheel
         uses: actions/upload-artifact@v4
