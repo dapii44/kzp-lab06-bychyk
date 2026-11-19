@@ -2,7 +2,7 @@
 
 **Обробка даних засобами Python: CSV, колекції, модулі, pytest, ruff і wheel**
 Курс «Кросплатформні засоби програмування», Національний університет «Львівська політехніка».
-Виконав: Бичик Вадім, група КІ-304. Репозиторій: <https://github.com/GITHUB_LOGIN/kzp-lab06-bychyk>
+Виконав: Бичик Вадім, група КІ-304. Репозиторій: <https://github.com/dapii44/kzp-lab06-bychyk>
 (гілка `lab06`, Pull Request № 8, тег `v0.1.0`).
 
 ## 1. Тема, номер і варіант
@@ -212,8 +212,8 @@ python -m venv .venv-wheel
 **перевірка встановленого wheel** (успішний запуск із порівнянням зі звітом-прикладом і запуск на
 пошкодженому CSV із очікуваним кодом 2), завантаження wheel як артефакту
 `kzp-lab06-wheel-<os>-<run_number>`.
-Посилання на запуск: <https://github.com/GITHUB_LOGIN/kzp-lab06-bychyk/actions>; тег:
-<https://github.com/GITHUB_LOGIN/kzp-lab06-bychyk/releases/tag/v0.1.0>.
+Посилання на запуск: <https://github.com/dapii44/kzp-lab06-bychyk/actions>; тег:
+<https://github.com/dapii44/kzp-lab06-bychyk/releases/tag/v0.1.0>.
 Крок перевірки wheel відтворено локально в чистому каталозі (звіт збігається, код помилки 2); сам
 запуск CI виконується на GitHub.
 

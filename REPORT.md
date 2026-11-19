@@ -2,7 +2,7 @@
 
 **Об'єктно-орієнтована модель у Python: класи, @property, @dataclass, підтипи та Protocol**
 Курс «Кросплатформні засоби програмування», Національний університет «Львівська політехніка».
-Виконав: Бичик Вадім, група КІ-304. Репозиторій: <https://github.com/GITHUB_LOGIN/kzp-lab06-bychyk>
+Виконав: Бичик Вадім, група КІ-304. Репозиторій: <https://github.com/dapii44/kzp-lab06-bychyk>
 (гілка `lab07`, створена від `lab06`, Pull Request № 16, тег `v0.2.0`). Новий репозиторій не
 створювався — за методичними вказівками робота розвиває проєкт лабораторної № 6.
 
@@ -174,8 +174,8 @@ python -m venv /tmp/venvw && /tmp/venvw/bin/pip install --no-deps dist/*.whl
 Windows, macOS): pytest, ruff, build, **встановлення wheel у чисте середовище**, запуск обох CLI
 зі звіркою з еталонами та перевіркою коду 2, завантаження wheel-артефакту. Сам запуск CI
 виконується на GitHub; локально відтворено кожен його крок на Ubuntu. Посилання на запуски:
-<https://github.com/GITHUB_LOGIN/kzp-lab06-bychyk/actions>; тег:
-<https://github.com/GITHUB_LOGIN/kzp-lab06-bychyk/releases/tag/v0.2.0>.
+<https://github.com/dapii44/kzp-lab06-bychyk/actions>; тег:
+<https://github.com/dapii44/kzp-lab06-bychyk/releases/tag/v0.2.0>.
 
 ## 10. GitHub Issues і Pull Request
 
