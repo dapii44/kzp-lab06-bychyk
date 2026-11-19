@@ -24,7 +24,6 @@ Python-застосунок з курсу «Кросплатформні зас�
 ├── reports/example-summary.txt    # еталонний звіт лаб. № 6
 ├── reports/example-oop-summary.txt # еталон лаб. № 7 (з блоком навантаження)
 ├── .github/workflows/ci.yml       # pytest, ruff, wheel на Ubuntu, Windows, macOS
-├── ai/                            # ролі агента ШІ
 └── REPORT.md                      # звіт; усі звіти — docs/reports/
 ```
 
