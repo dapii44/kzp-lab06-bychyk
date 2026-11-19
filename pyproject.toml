@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "kzp-lab06-bychyk"
+version = "0.1.0"
+description = "Звіт про спортивні тренування з CSV (КЗП, лабораторна робота № 6)"
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [{ name = "Вадім Бичик, КІ-304" }]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "ruff>=0.8",
+    "build>=1.2",
+]
+
+[project.scripts]
+kzp-lab06 = "kzp_lab06.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+pythonpath = ["src"]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+exclude = ["build", "dist", ".venv", ".venv-*"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "B", "UP", "I"]
