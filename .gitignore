@@ -15,6 +15,7 @@ __pycache__/
 reports/*
 !reports/.gitkeep
 !reports/example-summary.txt
+!reports/example-oop-summary.txt
 
 # Локальні налаштування середовищ розробки та файли ОС.
 .idea/
