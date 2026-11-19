@@ -22,3 +22,21 @@ def test_importing_modules_has_no_side_effects(capsys) -> None:
 
     captured = capsys.readouterr()
     assert captured.out == "" and captured.err == ""
+
+
+def test_oop_package_version_matches_pyproject() -> None:
+    """Версія пакета лабораторної № 7 також збігається з pyproject.toml."""
+    import kzp_lab07
+
+    data = tomllib.loads((ROOT / "pyproject.toml").read_text(encoding="utf-8"))
+
+    assert kzp_lab07.__version__ == data["project"]["version"]
+
+
+def test_oop_modules_import_without_side_effects(capsys) -> None:
+    """Імпорт модулів kzp_lab07 нічого не друкує."""
+    for name in ("models", "loader", "analysis", "reporting", "cli", "errors"):
+        importlib.import_module(f"kzp_lab07.{name}")
+
+    captured = capsys.readouterr()
+    assert captured.out == "" and captured.err == ""
