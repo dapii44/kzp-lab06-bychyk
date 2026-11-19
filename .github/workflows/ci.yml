@@ -1,0 +1,65 @@
+# Один workflow перевіряє однаковий commit на трьох операційних системах.
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install project with dev dependencies
+        run: python -m pip install -e ".[dev]"
+
+      - name: Test
+        run: python -m pytest
+
+      - name: Lint
+        run: ruff check .
+
+      - name: Format check
+        run: ruff format --check .
+
+      - name: Build wheel
+        run: python -m build
+
+      # Wheel ставиться без dev-залежностей в окреме чисте середовище й запускається.
+      - name: Smoke-test installed wheel
+        shell: bash
+        run: |
+          python -m venv .venv-wheel
+          if [ -d .venv-wheel/Scripts ]; then PY=.venv-wheel/Scripts/python; else PY=.venv-wheel/bin/python; fi
+          "$PY" -m pip install --no-deps dist/*.whl
+          "$PY" -m kzp_lab06.cli data/input.csv reports/wheel-summary.txt
+          diff -u reports/example-summary.txt reports/wheel-summary.txt
+          # Очікувана помилка даних має давати код 2.
+          printf 'date,kind,duration,distance,pulse\n2026-09-01,Біг,abc,1,1\n' > reports/bad.csv
+          set +e
+          "$PY" -m kzp_lab06.cli reports/bad.csv reports/bad-summary.txt
+          code=$?
+          set -e
+          test "$code" -eq 2
+
+      - name: Upload wheel
+        uses: actions/upload-artifact@v4
+        with:
+          name: kzp-lab06-wheel-${{ matrix.os }}-${{ github.run_number }}
+          path: dist/*.whl
